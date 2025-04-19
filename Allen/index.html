@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Online Coaching for NEET, IIT JEE & Class 6 - 10th</title>
+    <meta
+      name="description"
+      content="ALLEN - India's best coaching institute for NEET, IIT JEE, and classes 6 to 10 with 36 years of experience offering unparalleled personalized guidance. Join today and embark on a journey to academic excellence."
+    />
+    <meta
+      name="keywords"
+      content="NEET Coaching, JEE Coaching, Class 6 to 10 Coaching, Online Coaching, Offline Coaching,"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="next-size-adjust" />
+    <link rel="canonical" href="https://allen.in" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      let currentPath = window.location.pathname;
+      console.log(currentPath);
+      if (currentPath === "/") {
+        document.querySelector("title").innerHTML =
+          "Best Online Coaching for NEET, IIT JEE & Class 6 - 10th";
+        let arr = document.querySelectorAll("meta");
+        //description
+        arr[2].content =
+          "ALLEN - India's best coaching institute for NEET, IIT JEE, and classes 6 to 10 with 36 years of experience offering unparalleled personalized guidance. Join today and embark on a journey to academic excellence.";
+        //keywords
+        arr[3].content =
+          "NEET Coaching, JEE Coaching, Class 6 to 10 Coaching, Online Coaching, Offline Coaching,";
+        // canonical link
+        const headAllElements = document.querySelector("head").children;
+        headAllElements[headAllElements.length - 1].href = "https://allen.in";
+        console.log("something done");
+      } else if (currentPath === "/jee") {
+        document.querySelector("title").innerHTML =
+          "JEE Online Coaching 2025 | Ace Your JEE with Allen Expert Training";
+        let arr = document.querySelectorAll("meta");
+        //description
+        arr[2].content =
+          "Join Allen's JEE Online Coaching 2025  for top-notch guidance, interactive sessions, and exam-focused preparation to crack JEE with confidence. ";
+        //keywords
+        arr[3].content =
+          "NEET Coaching, JEE Coaching, Class 6 to 10 Coaching, Online Coaching, Offline Coaching,";
+        // canonical link
+        const headAllElements = document.querySelector("head").children;
+        headAllElements[headAllElements.length - 1].href =
+          "https://allen.in/jee";
+        console.log("jee");
+      } else if (currentPath === "/neet") {
+        document.querySelector("title").innerHTML =
+          "NEET Online Coaching 2025 & 2026 | Best NEET Preparation Courses by ALLEN";
+        let arr = document.querySelectorAll("meta");
+        //description
+        arr[2].content =
+          "India’s top rated NEET Online Coaching to succeed in your medical entrance exams. Tailored for NEET-UG aspirants, ALLEN’s online coaching for NEET provides expert guidance and comprehensive resources for a transformative learning experience. Join Today! ";
+        //keywords
+        arr[3].content =
+          "NEET Coaching, JEE Coaching, Class 6 to 10 Coaching, Online Coaching, Offline Coaching,";
+        // canonical link
+        const headAllElements = document.querySelector("head").children;
+        headAllElements[headAllElements.length - 1].href =
+          "https://allen.in/neet";
+      }
+    </script>
+  </body>
+</html>

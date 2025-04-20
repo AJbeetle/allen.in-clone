@@ -5,9 +5,12 @@ import './App.css'
 import {Routes, Route, Link} from "react-router-dom"
 
 import DesignSheet from "./layouts/DesignSheet"
-import HeaderComp from './components/header_2'
 import Footer from "./components/footer"
-import {NavigationPanel} from "./components/header_2"
+// import HeaderComp from './components/header_2'
+// import {NavigationPanel} from "./components/header_2"
+
+import HeaderComp from "./components/header_clean_2"
+import {NavigationPanel} from "./components/header_clean_2"
 
 function App() {
 
@@ -59,21 +62,21 @@ function App() {
           "View all options" : {
               "link" : "/viewAll",
               "Online Courses" : {
-                  "link" : ""
+                  "link" : "/OnlineCourses"
               },
               "Offline Courses" : {
-                  "link" : ""
+                  "link" : "/offlineCourses"
               },
               "Distance Learning" : {
-                  "link" : ""
+                  "link" : "/distnaceLearn"
               },
               "Hindi Medium Courses" : {
-                  "link" : ""
+                  "link" : "/HindiMedium"
               },
           }
       } ,        
       "Test Series" : {
-        // "new" : "NEW",
+        "new" : "NEW",
           "NEET" : {
               "link" : "/neet",
               "class 11th" : {

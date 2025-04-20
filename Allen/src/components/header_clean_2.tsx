@@ -1,7 +1,6 @@
 import {useState, useRef, ReactNode} from "react"
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-// import { useNavigate } from "react-router-dom";
 export type NavigationPanel = Record<string,Record<string,string|Record<string,string|Record<string, string>>>>
 export type HeaderT = {
     material : NavigationPanel
@@ -18,33 +17,10 @@ export default function HeaderComp(props:HeaderT){
     let childElem = useRef("");
 
     function showChild(parentElement:any){
-
-        // For testing --------------------------------------
-        /* parentElem.current = parentElement;
-        let subObject = props.material[parentElement];
-        console.log(parentElement)
-        console.log("---------------------");
-        console.log(subObject);
-        let arr = Object.keys(props.material[parentElement]);
-        console.log("arr : ",arr)
-        setChild(e => arr);
-        // console.log(child)
-        // arr.map((e)=>{
-        //     console.log(subObject)
-        // }) */
-
-
-
         parentElem.current = parentElement;
-        // let subObject = props.material[parentElement];
         setChildObj(props.material[parentElement]);
-        // con9sole.log("---------------------");
-        // console.log(parentElement)
-        // console.log(subObject);
         let arr = Object.keys(props.material[parentElement]);
-        // console.log("arr : ",arr)
         setChild(arr);
-        // console.log(childObj);
         
     }
 
@@ -57,8 +33,6 @@ export default function HeaderComp(props:HeaderT){
     }
     
     function moveto(link:any){
-        console.log("LINKING------------------")
-        console.log(link)
         setSubChildObj({});
         setChildObj({});
         setSubChild([]);
@@ -67,17 +41,9 @@ export default function HeaderComp(props:HeaderT){
     }
     
     function showSubChild(childElement:any){
-        
-
         setSubChildObj(childElement);
-        console.log("-----HAOAAAOAA----------")
-        console.log(parentElem.current);
-        console.log(childElement);
         let arr = Object.keys(childElement).filter(t=>t!="link");
-        console.log(arr)
         setSubChild(arr);
-        // console.log(subChild);
-        // console.log(props.material[parentElem.current][childElement])
 
         Object.keys(childObj).forEach(e=>{
             if(childObj[e] == childElement){
@@ -97,7 +63,6 @@ export default function HeaderComp(props:HeaderT){
         <div>
             happy me
         </div>
-        {/* {JSON.stringify(props.material)} */}
         <br/>
         <hr/>
         {/* {
@@ -136,8 +101,6 @@ export default function HeaderComp(props:HeaderT){
                                 {
                                     props.material[e]["new"] && <div className="absolute -top-6 -right-10 bg-yellow-600 font-semibold text-sm px-2 py-1 rounded-2xl text-white">
                                         {
-                                            // JSON.stringify(props.material[e]["new"])
-                                            // typeof(props.material[e]["new"])
                                                 props.material[e]["new"] as ReactNode
                                         }
                                     </div>
@@ -150,19 +113,17 @@ export default function HeaderComp(props:HeaderT){
                                     {
                                         parentElem.current == e && child.length>0 && child.map((el,index)=>{
                                             return (
-                                                <div className="flex w-[250px] py-1 px-2  mt-0 mb-4 border border-solid border-teal-400" onMouseOver={()=>showSubChild(childObj[el])} onMouseLeave={hideSubChild}>
+                                                <div className="flex w-[250px] py-1 px-2  mt-0 mb-4" onMouseOver={()=>showSubChild(childObj[el])} onMouseLeave={hideSubChild}>
                                                     
-                                                    <div key={index} className="w-full relative border border-radius border-pink-400">
+                                                    <div key={index} className="w-full relative">
                                                         {
-                                                            // JSON.stringify(Object.keys(childObj[e])) 
-                                                            // typeof(childObj."NEET")
                                                             Object.keys(childObj[el]).map(elm=>{
                                                                 if (elm=="link"){
                                                                     return (
                                                                     <div className=" flex flex-row w-full rounded-md" >  
-                                                                            <div className="w-full border border-solid border-red-900" >
-                                                                                <div className="absolute top-0 border border-cyan-800 border-solid w-[120%] h-full -z-10" onMouseLeave={hideSubChild} ></div>
-                                                                                <button onClick={()=>moveto(childObj[el][elm])} className="text-left rounded-lg hover:bg-gray-200 px-4 py-2 w-full h-full flex justify-between items-center border border-solid border-black">
+                                                                            <div className="w-full" >
+                                                                                <div className="absolute top-0  w-[120%] h-full -z-10" onMouseLeave={hideSubChild} ></div>
+                                                                                <button onClick={()=>moveto(childObj[el][elm])} className="text-left hover:bg-gray-200 rounded-lg px-4 py-2 w-full h-full flex justify-between items-center">
                                                                                     {el}  
                                                                                     {
                                                                                         Object.keys(childObj[el]).length>1 && <IoIosArrowForward />
@@ -173,18 +134,13 @@ export default function HeaderComp(props:HeaderT){
                                                                             {
                                                                                 childElem.current==el && subChild.length>0 && subChild.map((elme,index)=>{
                                                                                     return (
-                                                                                        // <div className="absolute -right-10 bg-white ">
                                                                                         <div className="flex text-lg flex-col gap-2 bg-white shadow-lg rounded-lg absolute -right-52 top-0 z-10 p-2 w-[80%]">
                                                                                             {
-                                                                                                // JSON.stringify(subChildObj)
-                                                                                                // console.log(Object.keys(subChildObj))
-                                                                                                // typeof(Object.keys(subChildObj))
-                                                                                                // JSON.stringify(Object.keys(subChildObj))
                                                                                                 Object.keys(subChildObj).map((elemen,index)=>{
                                                                                                     if(elemen!=="link"){
                                                                                                         return(
                                                                                                         <div className="w-full hover:bg-gray-200 px-2 py-1 rounded-lg">
-                                                                                                            <button onClick={()=>moveto(subChildObj[elemen]["link"])} className="text-left w-full flex justify-between items-center ">{elemen} <IoIosArrowForward /> </button>
+                                                                                                            <button onClick={()=>moveto(subChildObj[elemen]["link"])} className="text-left w-full flex justify-between items-center ">{elemen}  </button>
                                                                                                         </div>
                                                                                                         )
 

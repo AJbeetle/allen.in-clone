@@ -146,13 +146,13 @@ export default function HeaderComp(props:HeaderT){
                             </div>
                             {parentElem.current==e && child.length>0 ? <div className="absolute w-full bottom-2 border-b-8 border-solid border-blue-600 rounded-lg"></div> : null}
                             <div className="flex text-md flex-col gap-2 absolute top-20 left-0 z-10 w-[300px] font-normal " >
-                                <div className="w-fit w-[250px] bg-white shadow-xl rounded-lg relative border border-solid border-black relative">
+                                <div className="w-fit bg-white shadow-xl rounded-lg relative border border-solid border-black relative">
                                     {
                                         parentElem.current == e && child.length>0 && child.map((el,index)=>{
                                             return (
-                                                <div className="flex relative p-2 border border-solid border-cyan-400" onMouseOver={()=>showSubChild(childObj[el])}  onMouseLeave={hideSubChild}>
+                                                <div className="flex w-[250px] relative p-2 border border-solid border-cyan-400" onMouseOver={()=>showSubChild(childObj[el])}  onMouseLeave={hideSubChild}>
                                                     
-                                                    <div key={index} className="w-fit">
+                                                    <div key={index} className="w-full">
                                                         {
                                                             // JSON.stringify(Object.keys(childObj[e])) 
                                                             // typeof(childObj."NEET")

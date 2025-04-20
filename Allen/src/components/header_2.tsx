@@ -145,34 +145,36 @@ export default function HeaderComp(props:HeaderT){
                                 {e}{/* no-clickable items, their children are clickable*/}
                             </div>
                             {parentElem.current==e && child.length>0 ? <div className="absolute w-full bottom-2 border-b-8 border-solid border-blue-600 rounded-lg"></div> : null}
-                            <div className="flex text-md flex-col gap-2 absolute top-20 left-0 z-10 w-[300px] font-normal " >
-                                <div className="w-fit bg-white shadow-xl rounded-lg relative border border-solid border-black relative">
+                            <div className="flex text-md flex-col gap-2 absolute top-20 left-0 z-10 w-[290px] font-normal "  >
+                                <div className="w-fit bg-white shadow-xl rounded-lg relative ">
                                     {
                                         parentElem.current == e && child.length>0 && child.map((el,index)=>{
                                             return (
-                                                <div className="flex w-[250px] relative p-2 border border-solid border-cyan-400" onMouseOver={()=>showSubChild(childObj[el])}  onMouseLeave={hideSubChild}>
+                                                <div className="flex w-[250px] py-1 px-2  mt-0 mb-4 border border-solid border-teal-400" onMouseOver={()=>showSubChild(childObj[el])} onMouseLeave={hideSubChild}>
                                                     
-                                                    <div key={index} className="w-full">
+                                                    <div key={index} className="w-full relative border border-radius border-pink-400">
                                                         {
                                                             // JSON.stringify(Object.keys(childObj[e])) 
                                                             // typeof(childObj."NEET")
                                                             Object.keys(childObj[el]).map(elm=>{
                                                                 if (elm=="link"){
                                                                     return (
-                                                                    <div className=" flex flex-row w-full px-4 py-2 rounded-md hover:bg-gray-200 h-full" >
-                                                                            <div className="w-full">
-                                                                                <button onClick={()=>moveto(childObj[el][elm])} className="text-left w-full flex justify-between items-center">
+                                                                    <div className=" flex flex-row w-full rounded-md" >  
+                                                                            <div className="w-full border border-solid border-red-900" >
+                                                                                <div className="absolute top-0 border border-cyan-800 border-solid w-[120%] h-full -z-10" onMouseLeave={hideSubChild} ></div>
+                                                                                <button onClick={()=>moveto(childObj[el][elm])} className="text-left hover:bg-gray-200 px-4 py-2 w-full h-full flex justify-between items-center border border-solid border-black">
                                                                                     {el}  
                                                                                     {
                                                                                         Object.keys(childObj[el]).length>1 && <IoIosArrowForward />
                                                                                     }
                                                                                 </button>
                                                                             </div>
+
                                                                             {
                                                                                 childElem.current==el && subChild.length>0 && subChild.map((elme,index)=>{
                                                                                     return (
                                                                                         // <div className="absolute -right-10 bg-white ">
-                                                                                        <div className="flex text-lg flex-col gap-2 bg-white shadow-lg rounded-lg absolute -right-52 top-1 z-10 p-2 w-[80%]">
+                                                                                        <div className="flex text-lg flex-col gap-2 bg-white shadow-lg rounded-lg absolute -right-52 top-0 z-10 p-2 w-[80%]">
                                                                                             {
                                                                                                 // JSON.stringify(subChildObj)
                                                                                                 // console.log(Object.keys(subChildObj))

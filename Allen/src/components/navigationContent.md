@@ -369,3 +369,6 @@ let navigationPanel : NavigationPanel =
     }
 
 
+
+
+stable state => ![alt text](image.png)

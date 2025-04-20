@@ -73,7 +73,7 @@ function App() {
           }
       } ,        
       "Test Series" : {
-        "new" : "NEW",
+        // "new" : "NEW",
           "NEET" : {
               "link" : "/neet",
               "class 11th" : {
@@ -118,7 +118,7 @@ function App() {
           }
       } , 
       "Result" : {
-        "new" : "NEW",
+        // "new" : "NEW",
           "JEE MAIN 2025" : {
               "link" : "/main2025"
           },
